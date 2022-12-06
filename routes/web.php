@@ -22,3 +22,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/register', [App\Http\Controllers\HomeController::class, 'register']);
+
+Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index']);

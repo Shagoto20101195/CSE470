@@ -8,15 +8,17 @@
 </head>
 <body>
     <div class="w3-container w3-lime w3-center" style="height:200px;">
-        <h1>Graine</h1>
-        <p>Graine is a web application that allows you to buy or sell groceries through wide across</p>
+        <h1><b>Graine</b></h1>
+        <br><br>
+        <h3><i>Graine is a web application that allows you to buy or sell groceries through wide across</i></h3>
     </div>
     <div class="w3-container w3-white w3-padding-large" style="height:300px;">
-    
+        
           
     </div>
 
     <div class="w3-container w3-lime w3-center" style="height:100px;">
+        <br>
             <i>&copy; Andalib Rahman Shagoto</i>
     </div>
 
