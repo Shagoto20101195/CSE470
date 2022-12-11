@@ -20,12 +20,19 @@ use Illuminate\Support\Facades\Route;
 
 //Auth::routes();
 
+
+// Home Controllers
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/register', [App\Http\Controllers\HomeController::class, 'register']);
-Route::get('/landing', [App\Http\Controllers\LoginController::class, 'login ($request)']);
 
+// Login Controllers
+Route::post('/', [App\Http\Controllers\LoginController::class, 'login']);
+Route::get('/landing', [App\Http\Controllers\LoginController::class, 'login']);
 
+// Register controllers
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index']);
 Route::get('/', [App\Http\Controllers\RegisterController::class, 'home']);
-
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'store']);
+
+// Logout controllers
+Route::post('/landing', [App\Http\Controllers\LogoutController::class, 'logout']);

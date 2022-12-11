@@ -21,22 +21,23 @@
                 <h4>Login Now on Graine!</h4>
             </div>
               
-              <form class="w3-container" method="POST" action="landing">
+              <form class="w3-container" method="POST">
+                @csrf
                 <p>
                     <label>Login As:</label>
-                    <input class="w3-radio" type="radio" name="user" value="buyer" required>
-                    <label>Buyer</label>
-                    <input class="w3-radio" type="radio" name="user" value="seller" required>
-                    <label>Seller</label>
+                    <input class="w3-radio" type="radio" id="buyer" name="user" value="Buyer" required>
+                    <label for="user">Buyer</label>
+                    <input class="w3-radio" type="radio" id="seller" name="user" value="Seller" required>
+                    <label for="user">Seller</label>
                       
                 </p>
                 <p>
-                    <label>Email:</label>
-                    <input class="w3-input" type="text" name="email" placeholder="Enter your email" required>
+                    <label for="email">Email:</label>
+                    <input class="w3-input" type="text" name="email" id="email" placeholder="Enter your email" required>
                 </p>
                 <p>
-                    <label>Password:</label>
-                    <input class="w3-input" type="text" name="password" placeholder="Enter your password" required>
+                    <label for="password">Password:</label>
+                    <input class="w3-input" type="password" name="password" id="password" placeholder="Enter your password" required>
                 </p>
                 <p>
                     <button type="submit" class="w3-button w3-lime">Login</button>
