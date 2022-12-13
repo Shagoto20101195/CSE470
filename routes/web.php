@@ -31,7 +31,6 @@ Route::get('/landing', [App\Http\Controllers\LoginController::class, 'login']);
 
 // Register controllers
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index']);
-Route::get('/', [App\Http\Controllers\RegisterController::class, 'home']);
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'store']);
 
 // Logout controllers

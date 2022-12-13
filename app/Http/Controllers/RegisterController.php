@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -11,27 +12,27 @@ class RegisterController extends Controller
         return view('register');
     }
 
-    public function home()
-    {
-        return view('home');
-    }
-
     public function store(Request $request)
     {
-        /* Auto gen code
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'password_confirmation' => 'required|same:password',
-        ]);
+        $check = DB::table('users')
+        ->where('email', $request->email);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
-
-        return redirect()->route('login');*/
+        if($check->exists()){
+            return view('register', ['error' => 'Email already exists']);
+        }
+        else
+        {
+            DB::table('users')->insert([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password,
+                'role' => $request->user,
+                'phone' => $request->number,
+                'address' => $request->address
+            ]);
+        }
+        
+        return view('home', ['success' => 'Registration successful']);
+        //return redirect()->route('/')->with('success', 'Registration successful');
     }
 }
