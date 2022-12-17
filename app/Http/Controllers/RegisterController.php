@@ -30,9 +30,8 @@ class RegisterController extends Controller
                 'phone' => $request->number,
                 'address' => $request->address
             ]);
+
+            return view('home', ['success' => 'Registration successful']);
         }
-        
-        return view('home', ['success' => 'Registration successful']);
-        //return redirect()->route('/')->with('success', 'Registration successful');
     }
 }

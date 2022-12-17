@@ -29,11 +29,11 @@
             <div class="w3-dropdown-hover" >
                 <button class="w3-button w3-lime" > <i class="fa fa-bars"></i> </button>
                 <div class="w3-dropdown-content w3-bar-block w3-border">
-                  <a href="\profile" class="w3-bar-item w3-button">Profile</a>
+                  <a href="#" class="w3-bar-item w3-button">Profile</a>
                   <a href="\" class="w3-bar-item w3-button">Logout</a>
             </div>
             
-            <!--<p>Hello {{ $request['user'] }}</p>-->
+            @yield('content')
         </div>
     </main>
     

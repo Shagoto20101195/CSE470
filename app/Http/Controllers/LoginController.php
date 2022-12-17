@@ -9,17 +9,15 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     { 
-        //return view('landing', compact('request'));
+        $check = DB::select("SELECT * FROM users WHERE email = '$request->email'");
 
-        $check = DB::table('users')->where('email', $request['email'])->get();
-
-        if($request['email'] == $check['email'] && $request['password'] == $check['password'] && $request['user'] == $check['role'])
+        if(count($check) == 1 && $check[0]->password == $request->password && $check[0]->role == $request->user)
         {
             return view('landing', compact('request'));
         }
         else
         {
-            return redirect()->route('home')->with('error', 'Email is incorrect.');
+            return view('home', compact('request'));
         }
     }
 }
