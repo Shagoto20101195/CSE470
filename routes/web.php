@@ -38,5 +38,6 @@ Route::post('/register', [App\Http\Controllers\RegisterController::class, 'store
 // Logout controllers
 Route::post('/landing', [App\Http\Controllers\LogoutController::class, 'logout']);
 
-// Profile controllers
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
+//Profile update controllers
+Route::post('/update', [App\Http\Controllers\ProfileUpdateController::class, 'update']);
+Route::get('/update', [App\Http\Controllers\ProfileUpdateController::class, 'index']);

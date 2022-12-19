@@ -13,7 +13,12 @@ class LoginController extends Controller
 
         if(count($check) == 1 && $check[0]->password == $request->password && $check[0]->role == $request->user)
         {
-            return view('landing', compact('request'));
+            $name = $check[0]->name;
+            $email = $check[0]->email;
+            $role = $check[0]->role;
+            $address = $check[0]->address;
+            $phone = $check[0]->phone;
+            return view('landing', compact('request', 'name', 'email', 'role', 'address', 'phone'));
         }
         else
         {
