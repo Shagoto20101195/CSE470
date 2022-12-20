@@ -18,7 +18,15 @@ class LoginController extends Controller
             $role = $check[0]->role;
             $address = $check[0]->address;
             $phone = $check[0]->phone;
-            return view('landing', compact('request', 'name', 'email', 'role', 'address', 'phone'));
+
+            if($role == 'Seller')
+            {
+                return view('seller_landing', compact('request', 'name', 'email', 'role', 'address', 'phone'));
+            }
+            else if($role == 'Buyer')
+            {
+                return view('buyer_landing', compact('request', 'name', 'email', 'role', 'address', 'phone'));
+            }
         }
         else
         {

@@ -13,7 +13,7 @@
         <div class="w3-container w3-lime w3-center" style="height:200px;">
             <h1><b>Graine</b></h1>
             <br><br>
-            <h3><i>Graine is a web application that allows you to buy or sell groceries through wide across</i></h3>
+            <h3><i>Welcome {{ $val = DB::table('users')->select('role')->where('email', $request['email'])->get()->value('role') }}!</i></h3>
         </div>
     </header>
 
@@ -41,7 +41,15 @@
         </div>
 
         <div class="w3-container">
-          
+                <table class="w3-table-all w3-centered">
+                    <caption><h1>Items That You Own</h1></caption>
+                    <tr class="w3-hover-lime">
+                        <th>Item Name</th>
+                        <th>Type</th>
+                        <th>Quantity</th>
+                        <th>Price Per Unit</th>
+                    </tr>
+                </table>
             
         </div>
         

@@ -27,9 +27,14 @@ Route::get('/register', [App\Http\Controllers\HomeController::class, 'register']
 //Route::post('/', [App\Http\Controllers\HomeController::class, 'login']);
 
 // Login Controllers
-Route::get('/landing', [App\Http\Controllers\LoginController::class, 'login']);
+//Route::get('/landing', [App\Http\Controllers\LoginController::class, 'login']);
 Route::post('/', [App\Http\Controllers\LoginController::class, 'login']);
 
+// Seller Controllers
+Route::get('/seller', [App\Http\Controllers\SellerController::class, 'index']);
+
+// Buyer Controllers
+Route::get('/buyer', [App\Http\Controllers\BuyerController::class, 'index']);
 
 // Register controllers
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index']);
