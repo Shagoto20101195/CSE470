@@ -19,20 +19,12 @@
 
     <main>
         
-        <div class="w3-container w3-white w3-padding-large" style="height:300px;">
+        <div class="w3-container w3-white w3-padding-large" style="height:1000px;">
             <div class="w3-dropdown-hover">
                 <button class="w3-button w3-lime" > <i class="fa fa-bars"></i> </button>
                 <div class="w3-dropdown-content w3-bar-block w3-border">
-                  <a href="\update" class="w3-bar-item w3-button">Update Profile
-                    <form action="\update" method="post">
-                        <input type="hidden" name="name" id="name" value="{{ $request['name'] }}">
-                        <input type="hidden" name="email" id="email" value="{{ $request['email'] }}">
-                        <input type="hidden" name="address" id="address" value="{{ $request['address'] }}">
-                        <input type="hidden" name="phone" id="phone" value="{{ $request['phone'] }}">
-                        <input type="hidden" name="role" id="role" value="{{ $request['role'] }}">
-                    </form>
-                  </a>
-                  <a href="\add" class="w3-bar-item w3-button">Add items</a>
+                  <a href="\update" class="w3-bar-item w3-button">Update Profile</a>
+                  <a href="\purchase_items" class="w3-bar-item w3-button">Purchase items</a>
                   <a href="\home" class="w3-bar-item w3-button">Logout</a>
             </div>
         </div>
@@ -62,10 +54,37 @@
                         </tr>
                     @endforeach
                 </table>
-            
-            
         </div>
         
+        <div class = "w3-container" style="height:50px;">
+        </div>
+
+        <div class="w3-container">
+            <table class="w3-table-all w3-centered">
+                <caption><h1>Transactions</h1></caption>
+                <tr class="w3-hover-lime">
+                    <th>ID</th>
+                    <th>To</th>
+                    <th>Item Name</th>
+                    <th>Total Price</th>
+                </tr>
+
+                @php
+                    $items = DB::table('transactions')->where('to', $request['email'])->get();
+                @endphp
+                @foreach ($items as $item)
+                    <tr class="w3-hover-lime">
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->from }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->total_price }}</td>
+                    </tr>
+                @endforeach
+            </table>   
+    </div>
+
+    <div class = "w3-container" style="height:50px;">
+    </div>
     </main>
     
     
