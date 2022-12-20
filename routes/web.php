@@ -22,13 +22,15 @@ use Illuminate\Support\Facades\Route;
 
 
 // Home Controllers
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+//Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/register', [App\Http\Controllers\HomeController::class, 'register']);
 //Route::post('/', [App\Http\Controllers\HomeController::class, 'login']);
 
 // Login Controllers
 //Route::get('/landing', [App\Http\Controllers\LoginController::class, 'login']);
-Route::post('/', [App\Http\Controllers\LoginController::class, 'login']);
+Route::post('/home', [App\Http\Controllers\LoginController::class, 'login']);
+//Route::post('/', [App\Http\Controllers\LoginController::class, 'login']);
 
 // Seller Controllers
 Route::get('/seller', [App\Http\Controllers\SellerController::class, 'index']);
@@ -46,3 +48,7 @@ Route::post('/landing', [App\Http\Controllers\LogoutController::class, 'logout']
 //Profile update controllers
 Route::post('/update', [App\Http\Controllers\ProfileUpdateController::class, 'update']);
 Route::get('/update', [App\Http\Controllers\ProfileUpdateController::class, 'index']);
+
+// Add item controllers
+Route::get('/add_items', [App\Http\Controllers\AddItemController::class, 'index']);
+Route::post('/add_items', [App\Http\Controllers\AddItemController::class, 'store']);

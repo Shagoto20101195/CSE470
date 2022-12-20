@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('stacks', function (Blueprint $table) {
-            $table->string('email')->unique();
-            $table->string('type');
-            $table->string('name')->unique();
-            $table->integer('price');
-            $table->integer('quantity');
+        Schema::create('transactions', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('from')->secondary();
+            $table->string('to')->secondary();
+            $table->string('name');
+            $table->integer('total_price');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stacks');
+        Schema::dropIfExists('transactions');
     }
 };

@@ -53,7 +53,7 @@
                 </p>
                 <p>
                     <button type="submit" class="w3-button w3-lime">Register</button>
-                    <p>Already have an account? <a href="/">Login Now!</a></p>
+                    <p>Already have an account? <a href="/home">Login Now!</a></p>
                 </p>
               </form>  
         </div>

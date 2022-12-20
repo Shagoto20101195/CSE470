@@ -4,7 +4,6 @@
 <div class="w3-container w3-white w3-padding-large" style="height:400px;">
     <p>Hello {{ $request['user'] }}</p>
 </div> --}}
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,8 +28,8 @@
             <div class="w3-dropdown-hover">
                 <button class="w3-button w3-lime" > <i class="fa fa-bars"></i> </button>
                 <div class="w3-dropdown-content w3-bar-block w3-border">
-                  <a href="\profile" class="w3-bar-item w3-button">Profile</a>
-                  <a href="\" class="w3-bar-item w3-button">Logout</a>
+                  <a href="\seller" class="w3-bar-item w3-button">Profile</a>
+                  <a href="\home" class="w3-bar-item w3-button">Logout</a>
             </div>
         </div>
 
@@ -38,13 +37,13 @@
             <form method="POST">
                 @csrf
                 <p>
-                    <input class="w3-input" type="text" name="name" id="name" placeholder="{{ $name }}">
+                    <input class="w3-input" type="text" name="name" id="name" placeholder="{{ $request['name'] }}">
                 </p>
                 <p>
-                    <input class="w3-input" type="text" name="address" id="address" placeholder="{{ $address }}">
+                    <input class="w3-input" type="text" name="address" id="address" placeholder="{{ $request['address'] }}">
                 </p>
                 <p>
-                    <input class="w3-input" type="text" name="number" id="number" placeholder="{{ $phone }}">
+                    <input class="w3-input" type="text" name="number" id="number" placeholder="{{ $request['phone'] }}">
                 </p>
                 
                 <p>

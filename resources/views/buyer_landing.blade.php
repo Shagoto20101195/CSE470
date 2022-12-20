@@ -33,7 +33,7 @@
                     </form>
                   </a>
                   <a href="\add" class="w3-bar-item w3-button">Add items</a>
-                  <a href="\" class="w3-bar-item w3-button">Logout</a>
+                  <a href="\home" class="w3-bar-item w3-button">Logout</a>
             </div>
         </div>
 
@@ -49,6 +49,18 @@
                         <th>Quantity</th>
                         <th>Price Per Unit</th>
                     </tr>
+
+                    @php
+                        $items = DB::table('stores')->where('email', $request['email'])->get();
+                    @endphp
+                    @foreach ($items as $item)
+                        <tr class="w3-hover-lime">
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->type }}</td>
+                            <td>{{ $item->quantity }}</td>
+                            <td>{{ $item->price }}</td>
+                        </tr>
+                    @endforeach
                 </table>
             
             

@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileUpdateController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('update');
+        return view('update', compact('request'));
     }
     public function update(Request $request)
     {

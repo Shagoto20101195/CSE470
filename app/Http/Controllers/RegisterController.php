@@ -31,7 +31,7 @@ class RegisterController extends Controller
                 'address' => $request->address
             ]);
 
-            return view('home', ['success' => 'Registration successful']);
+            return redirect('home');
         }
     }
 }
