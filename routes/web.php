@@ -23,14 +23,10 @@ use Illuminate\Support\Facades\Route;
 
 // Home Controllers
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
-//Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/register', [App\Http\Controllers\HomeController::class, 'register']);
-//Route::post('/', [App\Http\Controllers\HomeController::class, 'login']);
 
 // Login Controllers
-//Route::get('/landing', [App\Http\Controllers\LoginController::class, 'login']);
 Route::post('/home', [App\Http\Controllers\LoginController::class, 'login']);
-//Route::post('/', [App\Http\Controllers\LoginController::class, 'login']);
 
 // Seller Controllers
 Route::get('/seller', [App\Http\Controllers\SellerController::class, 'index']);
@@ -52,3 +48,9 @@ Route::get('/update', [App\Http\Controllers\ProfileUpdateController::class, 'ind
 // Add item controllers
 Route::get('/add_items', [App\Http\Controllers\AddItemController::class, 'index']);
 Route::post('/add_items', [App\Http\Controllers\AddItemController::class, 'store']);
+
+// Purchase controllers
+Route::get('/purchase_items', [App\Http\Controllers\PurchaseController::class, 'index']);
+
+// Sell item controllers
+Route::get('/sell_items', [App\Http\Controllers\SellItemController::class, 'index']);

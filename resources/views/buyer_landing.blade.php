@@ -64,7 +64,7 @@
                 <caption><h1>Transactions</h1></caption>
                 <tr class="w3-hover-lime">
                     <th>ID</th>
-                    <th>To</th>
+                    <th>From</th>
                     <th>Item Name</th>
                     <th>Total Price</th>
                 </tr>

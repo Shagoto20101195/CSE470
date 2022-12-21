@@ -24,7 +24,8 @@
                 <button class="w3-button w3-lime" > <i class="fa fa-bars"></i> </button>
                 <div class="w3-dropdown-content w3-bar-block w3-border">
                   <a href="\update" class="w3-bar-item w3-button">Update Profile</a>
-                  <a href="add_items" value="{{ $request }}" method="post" class="w3-bar-item w3-button">Add items</a>
+                  <a href="add_items" value="{{ $request }}" method="post" class="w3-bar-item w3-button">Add Items</a>
+                  <a href="sell_items" value="{{ $request }}" method="post" class="w3-bar-item w3-button">Sell Items</a>
                   <a href="\home" class="w3-bar-item w3-button">Logout</a>
             </div>
         </div>
